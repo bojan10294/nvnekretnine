@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Lokacija",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Adresa": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Slike": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "prodato",
+        "useljivo",
+        "u izgradnji",
+        "u pripremi"
+      ],
+      "default": "u pripremi",
+      "required": true
+    },
+    "OpremljenostObjekta": {
+      "type": "richtext",
+      "required": true
+    },
+    "opremljenost_stanova": {
+      "type": "richtext",
+      "required": true
+    },
+    "Nekretnine": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apartment.apartment",
+      "mappedBy": "Lokacija"
+    },
+    "Grad": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "Lokacije"
+    },
+    "Latitude": {
+      "type": "float",
+      "required": true
+    },
+    "Longitude": {
+      "type": "float",
+      "required": true
+    }
+  }
+}

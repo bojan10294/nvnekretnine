@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apartments",
+  "info": {
+    "singularName": "apartment",
+    "pluralName": "apartments",
+    "displayName": "Nekretnina",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Naziv": {
+      "type": "string",
+      "required": true
+    },
+    "Opis": {
+      "type": "richtext",
+      "required": true
+    },
+    "Slike": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Detalji": {
+      "displayName": "apartment-details",
+      "type": "component",
+      "repeatable": false,
+      "component": "apartment-details.apartment-details",
+      "required": true
+    },
+    "Lokacija": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "Nekretnine"
+    },
+    "Prodato": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_apartment_details_apartment_details",
+  "info": {
+    "displayName": "apartment-details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "VrstaNekretnine": {
+      "type": "string",
+      "required": true
+    },
+    "PovrsinaKvM": {
+      "type": "string",
+      "required": true
+    },
+    "Sprat": {
+      "type": "string",
+      "required": true
+    },
+    "Useljiv": {
+      "type": "string",
+      "required": true
+    },
+    "Lift": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
