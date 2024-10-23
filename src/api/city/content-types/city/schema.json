@@ -22,6 +22,12 @@
       "relation": "oneToMany",
       "target": "api::location.location",
       "mappedBy": "Grad"
+    },
+    "Nekretnine": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apartment.apartment",
+      "mappedBy": "Grad"
     }
   }
 }

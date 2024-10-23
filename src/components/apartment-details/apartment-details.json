@@ -14,8 +14,61 @@
       "type": "string",
       "required": true
     },
+    "Namena": {
+      "type": "enumeration",
+      "enum": ["Prodaja", "Izdavanje"],
+      "required": true
+    },
+    "PogodnoZa": {
+      "type": "enumeration",
+      "enum": ["porodicu", "samce", "studente"]
+    },
+    "Depozit": {
+      "type": "enumeration",
+      "enum": [
+        "Bez depozita",
+        "Depozit u visini jedne mesečne kirije",
+        "Depozit u visini dve mesečne kirije"
+      ],
+      "required": true
+    },
+    "KucniLjubimci": {
+      "type": "boolean"
+    },
+    "Namestenost": {
+      "type": "enumeration",
+      "enum": ["opremljen", "prazan", "poluopremljen"],
+      "required": true
+    },
+    "Parking": {
+      "type": "boolean"
+    },
+
     "Sprat": {
-      "type": "string",
+      "type": "enumeration",
+      "enum": [
+        "Prizemlje",
+        "Prvi sprat",
+        "Drugi sprat",
+        "Treći sprat",
+        "Četvrti sprat",
+        "Peti sprat",
+        "Šesti sprat",
+        "Sedmi sprat",
+        "Osmi sprat",
+        "Deveti sprat",
+        "Deseti sprat",
+        "Jedanasti sprat",
+        "Dvanaesti sprat",
+        "Trinaesti sprat",
+        "Četrnaesti sprat",
+        "Petnaesti sprat",
+        "Šesnaesti sprat",
+        "Sedamnaesti sprat",
+        "Osamnaesti sprat",
+        "Devetnaesti sprat",
+        "Dvadeseti sprat"
+      ],
       "required": true
     },
     "Useljiv": {
@@ -26,6 +79,18 @@
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "Uknjizen": {
+      "type": "boolean"
+    },
+    "Dvoriste": {
+      "type": "boolean"
+    },
+    "Internet": {
+      "type": "boolean"
+    },
+    "Televizija": {
+      "type": "boolean"
     }
   }
 }
