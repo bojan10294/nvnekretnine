@@ -20,7 +20,7 @@ module.exports = {
 
       const topCities = citiesWithCount
         .sort((a, b) => b.brojNekretnina - a.brojNekretnina)
-        .slice(0, 2);
+        .slice(0, 3);
 
       return { data: topCities };
     } catch (error) {
