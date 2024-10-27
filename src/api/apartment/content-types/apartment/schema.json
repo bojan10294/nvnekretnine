@@ -59,6 +59,10 @@
       "relation": "manyToOne",
       "target": "api::city.city",
       "inversedBy": "Nekretnine"
+    },
+    "Istaknuto": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
