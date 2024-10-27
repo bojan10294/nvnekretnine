@@ -4,28 +4,20 @@ module.exports = {
   async find(ctx) {
     try {
       const entries = await strapi.entityService.findMany('api::city.city', {
-        populate: {
-          Nekretnine: {
-            fields: ['id', 'Naziv']
-          },
-          Slika: {
-            fields: ['url', 'formats']
-          }
-        },
-        fields: ['id', 'Naziv']
+        populate: '*'
       });
 
       const citiesWithCount = entries.map(city => ({
         id: city.id,
         naziv: city.Naziv,
         brojNekretnina: city.Nekretnine?.length || 0,
-        slika: {
-          url: city.Slika?.data?.attributes?.url || null,
-          thumbnail: city.Slika?.data?.attributes?.formats?.thumbnail?.url || null,
-          small: city.Slika?.data?.attributes?.formats?.small?.url || null,
-          medium: city.Slika?.data?.attributes?.formats?.medium?.url || null,
-          large: city.Slika?.data?.attributes?.formats?.large?.url || null
-        }
+        slika: city.Slika ? {
+          url: city.Slika.url,
+          thumbnail: city.Slika.formats?.thumbnail?.url,
+          small: city.Slika.formats?.small?.url,
+          medium: city.Slika.formats?.medium?.url,
+          large: city.Slika.formats?.large?.url
+        } : null
       }));
 
       const topCities = citiesWithCount
@@ -34,6 +26,7 @@ module.exports = {
 
       return { data: topCities };
     } catch (error) {
+      console.error('Error:', error);
       ctx.throw(500, error);
     }
   }
