@@ -3,10 +3,8 @@
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::apartment.apartment', ({ strapi }) => ({
-  // Keep existing core methods
   ...createCoreController('api::apartment.apartment'),
 
-  // Add custom method for highlighted apartments
   async findHighlighted(ctx) {
     try {
       const entries = await strapi.entityService.findMany('api::apartment.apartment', {
@@ -37,18 +35,19 @@ module.exports = createCoreController('api::apartment.apartment', ({ strapi }) =
         purpose: entry.Detalji?.Namena,
         area: entry.Detalji?.PovrsinaKvM,
         address: entry.Lokacija?.data?.attributes?.Adresa,
-        city: entry.Grad?.data?.attributes?.Naziv,
-        image: entry.Slike?.data?.attributes ? {
-          url: entry.Slike.data.attributes.url,
-          thumbnail: entry.Slike.data.attributes.formats?.thumbnail?.url,
-          small: entry.Slike.data.attributes.formats?.small?.url,
-          medium: entry.Slike.data.attributes.formats?.medium?.url,
-          large: entry.Slike.data.attributes.formats?.large?.url
+        city: entry.Grad?.Naziv,
+        image: entry.Slike ? {
+          url: entry.Slike.url,
+          thumbnail: entry.Slike.formats?.thumbnail?.url,
+          small: entry.Slike.formats?.small?.url,
+          medium: entry.Slike.formats?.medium?.url,
+          large: entry.Slike.formats?.large?.url
         } : null
       }));
 
       return { data: formattedEntries };
     } catch (error) {
+      console.error('Error in findHighlighted:', error);
       ctx.throw(500, error);
     }
   }
