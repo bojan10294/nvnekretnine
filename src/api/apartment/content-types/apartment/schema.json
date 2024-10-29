@@ -43,12 +43,6 @@
       "component": "apartment-details.apartment-details",
       "required": true
     },
-    "Lokacija": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::location.location",
-      "inversedBy": "Nekretnine"
-    },
     "Prodato": {
       "type": "boolean",
       "default": false,
@@ -63,6 +57,14 @@
     "Istaknuto": {
       "type": "boolean",
       "default": false
+    },
+    "Latitude": {
+      "type": "float",
+      "required": true
+    },
+    "Longitude": {
+      "type": "float",
+      "required": true
     }
   }
 }

@@ -6,22 +6,25 @@
   },
   "options": {},
   "attributes": {
-    "VrstaNekretnine": {
-      "type": "string",
-      "required": true
-    },
     "PovrsinaKvM": {
       "type": "string",
       "required": true
     },
     "Namena": {
       "type": "enumeration",
-      "enum": ["Prodaja", "Izdavanje"],
+      "enum": [
+        "Prodaja",
+        "Izdavanje"
+      ],
       "required": true
     },
     "PogodnoZa": {
       "type": "enumeration",
-      "enum": ["porodicu", "samce", "studente"]
+      "enum": [
+        "porodicu",
+        "samce",
+        "studente"
+      ]
     },
     "Depozit": {
       "type": "enumeration",
@@ -37,16 +40,20 @@
     },
     "Namestenost": {
       "type": "enumeration",
-      "enum": ["opremljen", "prazan", "poluopremljen"],
+      "enum": [
+        "opremljen",
+        "prazan",
+        "poluopremljen"
+      ],
       "required": true
     },
     "Parking": {
       "type": "boolean"
     },
-
     "Sprat": {
       "type": "enumeration",
       "enum": [
+        "Suteren",
         "Prizemlje",
         "Prvi sprat",
         "Drugi sprat",
@@ -71,10 +78,6 @@
       ],
       "required": true
     },
-    "Useljiv": {
-      "type": "string",
-      "required": true
-    },
     "Lift": {
       "type": "boolean",
       "default": true,
@@ -91,6 +94,9 @@
     },
     "Televizija": {
       "type": "boolean"
+    },
+    "UseljivOd": {
+      "type": "date"
     }
   }
 }
