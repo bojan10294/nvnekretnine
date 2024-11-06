@@ -34,7 +34,7 @@ module.exports = createCoreController('api::apartment.apartment', ({ strapi }) =
         Tip: entry.Tip,
         Namena: entry.Detalji?.Namena,
         PovrsinaKvM: entry.Detalji?.PovrsinaKvM,
-        Cena: entry.Detalji?.Cena,
+        Cena: entry.Cena,
         Uknjizen: entry.Detalji?.Uknjizen,
         Parking: entry.Detalji?.Parking,
         Adresa: entry.Lokacija?.data?.attributes?.Adresa,
