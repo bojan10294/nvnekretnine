@@ -29,13 +29,16 @@ module.exports = createCoreController('api::apartment.apartment', ({ strapi }) =
 
       const formattedEntries = entries.map(entry => ({
         id: entry.id,
-        title: entry.Naziv,
-        description: entry.Opis,
-        type: entry.Tip,
-        purpose: entry.Detalji?.Namena,
-        area: entry.Detalji?.PovrsinaKvM,
-        address: entry.Lokacija?.data?.attributes?.Adresa,
-        city: entry.Grad?.Naziv,
+        Naziv: entry.Naziv,
+        Opis: entry.Opis,
+        Tip: entry.Tip,
+        Namena: entry.Detalji?.Namena,
+        PovrsinaKvM: entry.Detalji?.PovrsinaKvM,
+        Cena: entry.Detalji?.Cena,
+        Uknjizen: entry.Detalji?.Uknjizen,
+        Parking: entry.Detalji?.Parking,
+        Adresa: entry.Lokacija?.data?.attributes?.Adresa,
+        Grad: entry.Grad?.Naziv,
         image: entry.Slike ? {
           url: entry.Slike.url,
           thumbnail: entry.Slike.formats?.thumbnail?.url,
