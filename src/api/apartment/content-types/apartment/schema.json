@@ -20,21 +20,24 @@
       "type": "richtext",
       "required": true
     },
+    "Cena": {
+      "type": "integer",
+      "required": false
+    },
+    "Tip": {
+      "type": "enumeration",
+      "enum": ["Stan", "Kuca"],
+      "required": true
+    },
+    "Istaknuto": {
+      "type": "boolean",
+      "default": false
+    },
     "Slike": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "Tip": {
-      "type": "enumeration",
-      "enum": [
-        "Stan",
-        "Kuca"
-      ],
-      "required": true
+      "allowedTypes": ["images"]
     },
     "Detalji": {
       "displayName": "apartment-details",
@@ -53,10 +56,6 @@
       "relation": "manyToOne",
       "target": "api::city.city",
       "inversedBy": "Nekretnine"
-    },
-    "Istaknuto": {
-      "type": "boolean",
-      "default": false
     },
     "Latitude": {
       "type": "float",
