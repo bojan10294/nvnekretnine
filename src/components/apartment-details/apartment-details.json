@@ -55,6 +55,8 @@
       "enum": [
         "Suteren",
         "Prizemlje",
+        "Potkrovlje",
+        "Povučeni sprat",
         "Prvi sprat",
         "Drugi sprat",
         "Treći sprat",
@@ -97,6 +99,48 @@
     },
     "UseljivOd": {
       "type": "date"
+    },
+    "Struktura": {
+      "type": "enumeration",
+      "enum": [
+        "Garsonjera",
+        "Jednosoban",
+        "Jednoiposoban",
+        "Dvosoban",
+        "Dvoiposoban",
+        "Trosoban",
+        "Troiposoban",
+        "Četvorosoban",
+        "Četvoroiposoban",
+        "Petosoban",
+        "Petoiposoban",
+        "Šestosoban",
+        "Šestoiposoban",
+        "Sedmosoban",
+        "Sedmoiposoban",
+        "Osmosoban",
+        "Osmoiposoban",
+        "Devetosoban",
+        "Devetoiposoban"
+      ]
+    },
+    "Grejanje": {
+      "type": "enumeration",
+      "enum": [
+        "Klima",
+        "Alokatoria",
+        "Etažno",
+        "Centralno",
+        "Toplotna pumpa",
+        "Struja",
+        "Gas",
+        "Mermerni radijatori",
+        "Norveški radijatori",
+        "Čvrsto gorivo",
+        "OTA peć",
+        "Kaljeva peć",
+        "Podno"
+      ]
     }
   }
 }

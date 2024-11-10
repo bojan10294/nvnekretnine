@@ -26,7 +26,13 @@
     },
     "Tip": {
       "type": "enumeration",
-      "enum": ["Stan", "Kuca"],
+      "enum": [
+        "Stan",
+        "Kuca",
+        "Poslovni prostor",
+        "Garažno - parking mesto",
+        "Parcela"
+      ],
       "required": true
     },
     "Istaknuto": {
@@ -35,9 +41,11 @@
     },
     "Slike": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "Detalji": {
       "displayName": "apartment-details",
