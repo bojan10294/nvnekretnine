@@ -39,12 +39,12 @@ module.exports = createCoreController('api::apartment.apartment', ({ strapi }) =
         Parking: entry.Detalji?.Parking,
         Adresa: entry.Lokacija?.data?.attributes?.Adresa,
         Grad: entry.Grad?.Naziv,
-        image: entry.Slike ? {
-          url: entry.Slike.url,
-          thumbnail: entry.Slike.formats?.thumbnail?.url,
-          small: entry.Slike.formats?.small?.url,
-          medium: entry.Slike.formats?.medium?.url,
-          large: entry.Slike.formats?.large?.url
+        image: entry.Slike[0] ? {
+          url: entry.Slike[0].url,
+          thumbnail: entry.Slike[0].formats?.thumbnail?.url,
+          small: entry.Slike[0].formats?.small?.url,
+          medium: entry.Slike[0].formats?.medium?.url,
+          large: entry.Slike[0].formats?.large?.url
         } : null
       }));
 
