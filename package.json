@@ -20,8 +20,7 @@
     "@strapi/provider-upload-cloudinary": "^4.15.0",
     "@strapi/strapi": "4.9.0",
     "better-sqlite3": "8.0.1",
-    "pg": "^8.11.0",
-    "strapi-plugin-netlify-deployments": "^2.0.1"
+    "pg": "^8.11.0"
   },
   "devDependencies": {},
   "engines": {
