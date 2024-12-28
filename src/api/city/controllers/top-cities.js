@@ -26,7 +26,7 @@ module.exports = {
 
       return { data: topCities };
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error: ', error);
       ctx.throw(500, error);
     }
   }
